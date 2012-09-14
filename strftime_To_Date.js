@@ -185,10 +185,16 @@
 			type    : 'PARSE_VALUE'
 		}
 	}
-	function Exception_Input_Month( monthValue ) {
+	function Exception_Input_InvalidMonth( monthValue ) {
 		return {
 			message : monthValue + ' is not a valid entry for Month. Must be between 1 and 12.',
 			type    : 'INPUT_SANITY_MONTH'
+		}
+	}
+	function Exception_Input_InvalidDay( dayValue ) {
+		return {
+			message : dayValue + ' is not a valid entry for Day. Must be between 1 and 31.',
+			type    : 'INPUT_SANITY_DAY'
 		}
 	}
 	function Exception_Input_DateIsInPast( dateObject ) {
