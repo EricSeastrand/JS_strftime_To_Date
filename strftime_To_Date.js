@@ -149,12 +149,12 @@
 		if( dateParts.day < 1 || dateParts.day > 31 )
 			throw new Exception_Input_InvalidDay( dateParts.day );
 		
-		if( config.dateIsInPast )
-			if( dateObject.getTime() <  timeRightNow )
+		if( config.dateMustBeInPast )
+			if( dateObject.getTime() > timeRightNow )
 				throw new Exception_Input_DateIsInFuture( dateObject );
 		
-		if( config.dateIsInFuture )
-			if( dateObject.getTime() >  timeRightNow )
+		if( config.dateMustBeInFuture )
+			if( dateObject.getTime() < timeRightNow )
 				throw new Exception_Input_DateIsInPast( dateObject );
 	}
 	
